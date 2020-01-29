@@ -1,4 +1,5 @@
 // Update with your config settings.
+//TODO: Figure out how to host this on heroku i.e. look into the staging and deployment
 
 module.exports = {
 
@@ -40,17 +41,16 @@ module.exports = {
   production: {
     client: 'postgresql',
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      database: './database/todo.db3'
     },
     pool: {
       min: 2,
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
-  }
-
+      directory: './database/migrations',    }
+    },
+    seeds: {
+      directory: './database/seeds',
+    },
 };
